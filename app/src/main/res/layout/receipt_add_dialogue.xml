@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingBottom="20dp"
+    android:layout_margin="26dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Receipt"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:tag="title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:textSize="18sp"
+        android:hint="Title..."/>
+
+    <EditText
+        android:tag="price_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:textSize="18sp"
+        android:hint="Price(Optional)"/>
+
+    <DatePicker
+        android:tag="date_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_margin="6dp"/>
+
+</LinearLayout>

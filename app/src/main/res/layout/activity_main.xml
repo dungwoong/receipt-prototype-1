@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/dashboard_profile"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="mainProfile">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:text="My Dashboard"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/title_text"
+                android:text="All Categories"
+                android:layout_marginTop="6dp"
+                android:textSize="14sp"
+                android:textColor="#528AFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/andrew1"
+                android:layout_width="62dp"
+                android:layout_height="62dp" />
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/dashboard_grid"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:tag="Personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/personal"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+                    
+                    <TextView
+                        android:tag="text_1"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp"
+                        android:text="Personal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:tag="Business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/business"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:tag="text_1"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp"
+                        android:text="Business"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addCardButton"
+                android:onClick="askToAddTaskCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/plus"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp"
+                        android:text="New Folder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
