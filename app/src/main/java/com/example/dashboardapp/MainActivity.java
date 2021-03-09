@@ -28,20 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // TODO IMPLEMENT SQLITEDATABASE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO do something about the "12 items" thingy
-        // Add the default categories
         getReceiptManager().tryAddCategory("Business");
         getReceiptManager().tryAddCategory("Personal");
 
-        // POTENTIAL ERROR: idk when this fucking onCreate function runs...
-        // So there's a chance that duplicates will be made...uhh...we gotta do some testing huh
         GridLayout dashboard = findViewById(R.id.dashboard_grid);
         for (String i:getReceiptManager().getCategoryList()) {
 
-            // THIS CODE IS SO FUCKING EASY TO BREAK
-            // TODO implement a default kinda...list idk man we gotta do tests and shit
             if (!i.equals("Business") && !i.equals("Personal")) {
                 addTaskCard(dashboard, i);
             }
@@ -61,9 +56,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Add Category");
 
-        // Idk about the context main activity.this or whatever i fucking...idk
         EditText input = new EditText(MainActivity.this);
-        // I think this sets the input type of the thing?
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         builder.setView(input);
 
@@ -143,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
         TextView newCardText = newCard.findViewWithTag("text_1");
         newCardText.setText(strIn);
         ImageView newCardImage = newCard.findViewWithTag("image");
-        // This line of code is sketchy, but the user can't control what is passed in so...
         newCardImage.setImageResource(imageID);
 
         dashboard.addView(newCard);

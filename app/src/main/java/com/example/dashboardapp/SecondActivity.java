@@ -36,11 +36,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        // Load existing receipts and the screen in general...
+        // Load existing receipts and the screen
         String categoryToLoad = getReceiptViewer().getViewingCategory();
         TextView categoryTitle = findViewById(R.id.category_title);
         categoryTitle.setText(categoryToLoad);
-        // Onclicks are added by the addReceipt function so this should be ok
+        // Onclicks are added by the addReceipt function
         loadReceiptList(getReceiptManager().getReceiptsByCategory(categoryToLoad));
         addDeleteListeners();
     }
@@ -56,11 +56,6 @@ public class SecondActivity extends AppCompatActivity {
         // builder.setTitle("Add Receipt");
         builder.setView(alertView);
 
-        // Idk about the context main activity.this or whatever i fucking...idk
-        // EditText input = new EditText(SecondActivity.this);
-        // I think this sets the input type of the thing?
-        // input.setInputType(InputType.TYPE_CLASS_TEXT);
-        // builder.setView(input);
         EditText input = alertView.findViewWithTag("title_input");
         EditText priceInput = alertView.findViewWithTag("price_input");
         DatePicker datePicker = alertView.findViewWithTag("date_input");
@@ -71,7 +66,6 @@ public class SecondActivity extends AppCompatActivity {
         // Log.i("YEAR", Integer.toString(yeer));
         // Log.i("month", Integer.toString(mont));
         // Log.i("day", Integer.toString(dae));
-        // I HOPE THIS WORKS OK
         datePicker.updateDate(yeer, mont, dae);
 
         // set up the buttons
@@ -145,11 +139,9 @@ public class SecondActivity extends AppCompatActivity {
      */
     private void addReceipt(Receipt receipt) {
         /* This method SHOULD NOT add a receipt to the backend.
-        *  This method will also be used for the onLoad function or whatever
+        *  This method will also be used for the onLoad function later
         *  So it should only visually load the receipt onto the screen with onclicks
         * */
-        // BRUH NOW THIS IS SCUFFED...IM SETTIGN MAX LENGTH MULTIPLE TIMES SO IF THIS EVER CHANGES
-        // WE GOTTA CTRL+F AND CHANGE THINGS WE SHOULD THINK OVER THIS LOLLLLLL
         int maxLength = 12;
         int maxPLength = 6;
         String titleToDisplay = "";
@@ -227,7 +219,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     // This whole updateReceipt and visualAddReceipt being literally 2 of the same function
-    // Is kinda unfortunate...but whatever
+    // Is kinda unfortunate...change this later
     private void updateReceipt(int id) {
         LinearLayout receiptList = findViewById(R.id.all_receipts_list);
         View receipt = receiptList.findViewWithTag(Integer.toString(id));
@@ -273,8 +265,6 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // TODO MAKE THIS CODE LESS SCUFFED
-        // ok idk how this fucking code works but it works ok
         if (requestCode == 2) {
             updateReceipt(resultCode);
             Log.i("BRUH", "BRUH");

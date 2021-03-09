@@ -151,7 +151,7 @@ public class ThirdActivity extends AppCompatActivity {
         View allView = findViewById(R.id.all_receipt_fields);
         editAllTextViews(allView);
         mapScreenToReceipt();
-        // TODO TURN VIEWING RECEIPT TO NULL?
+        // TODO CONSIDER TURN VIEWING RECEIPT TO NULL?
         Intent intent = new Intent();
         setResult(getViewingReceipt().getId(), intent);
         finish();

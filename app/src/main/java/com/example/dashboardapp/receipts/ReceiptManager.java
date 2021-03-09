@@ -41,13 +41,12 @@ public class ReceiptManager {
      */
     public Receipt addReceipt(String title, String amount, String description, String category,
                               int y, int m, int d){
-        // TODO overload this function to not have to take the other things
+        // TODO overload this function to not have to take the other parameters
         Receipt receiptIn = new Receipt(this.nextId, title, amount, description, category, y, m, d);
         this.receiptList.add(receiptIn);
         this.nextId++;
 
-        // I don't know if this is redundant cuz the user won't be able to change this anyways,
-        // but for now we'll keep it in:
+        // May be redundant
         this.tryAddCategory(receiptIn.getCategory());
         return receiptIn;
     }
@@ -127,7 +126,6 @@ public class ReceiptManager {
             }
         }
         // This is inefficient, should search starting from last index
-        // But it's whatever
         ArrayList<Integer> ids = new ArrayList<Integer>();
         for (Receipt r: this.receiptList){
             if (r.getCategory() == category) {
